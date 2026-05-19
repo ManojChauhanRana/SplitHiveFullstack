@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Hello!</h2>
+    <p>
+      <b><%= @inviter.full_name || @inviter.email %></b> has invited you to join the group 
+      <strong><%= @group.name %></strong> on SplitHive.
+    </p>
+    
+    <p>
+      SplitHive makes it easy to split expenses and settle debts with your friends.
+    </p>
+    
+    <p>
+      Use the link below to accept the group invitation. If you already have a SplitHive account, the link will add you to the group. If you are new to SplitHive, you can create an account first and will be added automatically.
+    </p>
+    
+    <p>
+      <a href="<%= @url %>" style="display:inline-block;padding:10px 20px;background-color:#198754;color:#ffffff;text-decoration:none;border-radius:5px;">Join <%= @group.name %></a>
+    </p>
+    
+    <p>Thanks for using SplitHive!</p>
+  </body>
+</html>

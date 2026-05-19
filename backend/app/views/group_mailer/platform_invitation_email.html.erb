@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Hello!</h2>
+    <p>
+      <b><%= @inviter.full_name || @inviter.email %></b> has invited you to join SplitHive.
+    </p>
+
+    <p>
+      SplitHive helps friends and groups track shared expenses and settle balances.
+    </p>
+
+    <p>
+      Use the link below to create your account. This invitation is only for joining SplitHive and will not add you to any group automatically.
+    </p>
+
+    <p>
+      <a href="<%= @url %>" style="display:inline-block;padding:10px 20px;background-color:#0d6efd;color:#ffffff;text-decoration:none;border-radius:5px;">Create your SplitHive account</a>
+    </p>
+
+    <p>Thanks for using SplitHive!</p>
+  </body>
+</html>

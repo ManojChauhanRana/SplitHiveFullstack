@@ -1,0 +1,249 @@
+/* ── Brand tokens ─────────────────────────────────────────────── */
+:root {
+  --brand: #f59e0b;
+  --brand-dark: #d97706;
+  --brand-deeper: #b45309;
+  --brand-light: #fef3c7;
+  --brand-rgb: 245, 158, 11;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Override Bootstrap primary with brand amber ───────────────── */
+:root,
+[data-bs-theme="light"] {
+  --bs-primary: #f59e0b;
+  --bs-primary-rgb: 245, 158, 11;
+  --bs-link-color: #d97706;
+  --bs-link-hover-color: #b45309;
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #212529;
+
+  /* auth page */
+  --auth-outer-bg: #fffbeb;
+  --auth-panel-bg: #f59e0b;
+  --auth-card-bg: #ffffff;
+  --auth-card-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #f59e0b;
+  --bs-primary-rgb: 245, 158, 11;
+  --bs-link-color: #fbbf24;
+  --bs-link-hover-color: #fcd34d;
+  --bs-body-bg: #0f172a;
+  --bs-body-color: #e2e8f0;
+  --bs-card-bg: #1e293b;
+  --bs-border-color: #334155;
+
+  /* auth page */
+  --auth-outer-bg: #0f172a;
+  --auth-panel-bg: #1e293b;
+  --auth-card-bg: #1e293b;
+  --auth-card-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  width: 100%;
+}
+
+/* ── Brand buttons ────────────────────────────────────────────── */
+.btn-brand {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-brand:hover,
+.btn-brand:focus {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(var(--brand-rgb), 0.4);
+}
+.btn-brand:disabled {
+  background: #fcd34d;
+  color: #92400e;
+}
+
+.btn-brand-outline {
+  background: transparent;
+  border: 2px solid #f59e0b;
+  color: #f59e0b;
+  font-weight: 600;
+}
+.btn-brand-outline:hover,
+.btn-brand-outline:focus {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: #d97706;
+  color: #d97706;
+}
+
+/* Override Bootstrap .btn-primary everywhere */
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  border-color: #d97706 !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  border-color: #b45309 !important;
+  box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.35) !important;
+}
+.btn-primary:disabled {
+  background: #fcd34d !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+
+.btn-outline-primary {
+  color: #d97706 !important;
+  border-color: #f59e0b !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #f59e0b !important;
+  border-color: #f59e0b !important;
+  color: #fff !important;
+}
+
+/* Fix Bootstrap text-primary */
+.text-primary { color: #f59e0b !important; }
+
+/* ── Cards ────────────────────────────────────────────────────── */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+}
+
+/* ── Navbar ───────────────────────────────────────────────────── */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* ── Auth pages ───────────────────────────────────────────────── */
+.auth-outer {
+  min-height: 100vh;
+  background: var(--auth-outer-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  background: var(--auth-card-bg);
+  box-shadow: var(--auth-card-shadow);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  min-height: 560px;
+}
+
+.auth-brand-panel {
+  background: linear-gradient(145deg, #f59e0b 0%, #d97706 60%, #b45309 100%);
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.auth-brand-panel::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.auth-brand-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+
+.auth-form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    max-width: 460px;
+  }
+  .auth-brand-panel {
+    flex: none;
+    padding: 2rem;
+    min-height: 180px;
+  }
+}
+
+/* ── Theme toggle button ─────────────────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 20px;
+  color: rgba(255,255,255,0.85);
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* ── Progress bar brand color ────────────────────────────────── */
+.progress-bar {
+  background-color: var(--brand) !important;
+}
+
+/* ── Form focus rings ────────────────────────────────────────── */
+.form-control:focus,
+.form-select:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
+}
+
+/* ── Glassmorphism utility ───────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
