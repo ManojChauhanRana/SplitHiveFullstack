@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Rails
+backend/log/*
+backend/tmp/*
+backend/storage/*
+backend/vendor/bundle
+
+# React build files
+frontend/build/
+frontend/dist/
+
+# OS files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+
+# Dependency lock files (optional)
+# package-lock.json
+# yarn.lock
