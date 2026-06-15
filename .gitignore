@@ -32,3 +32,6 @@ frontend/dist/
 # Dependency lock files (optional)
 # package-lock.json
 # yarn.lock
+
+# Kamal secrets
+**/.kamal/secrets

@@ -1,0 +1,34 @@
+# Name of your application. Used to uniquely configure containers.
+service: frontend
+
+# Name of the container image.
+# Replace 'your-docker-username' with your actual Docker Hub username.
+image: thakurmanojchuauhan/splithive-frontend
+
+# Deploy to these servers.
+servers:
+  web:
+    - 69.62.81.57 # <-- REPLACE with your Hostinger VPS IP address
+
+# Enable SSL auto certification via Let's Encrypt and route domains.
+# kamal-proxy on the VPS will intercept port 80/443 traffic and route it here
+# if the hostname matches yourdomain.com or www.yourdomain.com.
+proxy:
+  ssl: true
+  host: yourdomain.com, www.yourdomain.com
+  # Nginx container internally listens on port 80, which matches kamal-proxy's default.
+
+# Credentials for your image host.
+registry:
+  # Specify the registry server if you're not using Docker Hub (e.g. ghcr.io)
+  # server: registry.digitalocean.com / ghcr.io
+  username: thakurmanojchuauhan # <-- REPLACE with your Docker Hub username
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Configure the image builder.
+builder:
+  arch: amd64
+  # Pass build arguments to the Docker build process
+  args:
+    VITE_API_URL: https://api.yourdomain.com # <-- REPLACE with your actual api domain
