@@ -44,7 +44,7 @@ env:
     # Match this to any external database server to configure Active Record correctly
     # Use backend-db for a db accessory server on same machine via local kamal docker network.
     DB_HOST: backend-db
-    DB_USER: backend
+    DB_USER: root
 
     # Log everything from Rails
     # RAILS_LOG_LEVEL: debug
