@@ -54,7 +54,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: ENV.fetch("KAMAL_HOST", "69.62.81.57") }
+  config.action_mailer.default_url_options = { host: ENV.fetch("KAMAL_HOST", "69.62.81.57"), port: 3000 }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
