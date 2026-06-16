@@ -1,6 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const initialState = {
+export interface GroupMember {
+  id?: number | string;
+  full_name?: string;
+  email?: string;
+  [key: string]: any;
+}
+
+export interface GroupDetail {
+  id?: number | string;
+  name?: string;
+  members?: GroupMember[];
+  [key: string]: any;
+}
+
+interface GroupState {
+  groups: any[];
+  groupDetail: GroupDetail;
+  loading: boolean;
+  error: string;
+}
+
+export const initialState: GroupState = {
   groups: [],
   groupDetail: {},
   loading: false,

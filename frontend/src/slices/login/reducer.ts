@@ -1,6 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const initialState = {
+export interface AuthUser {
+  id?: number | string;
+  email?: string;
+  full_name?: string;
+  [key: string]: any;
+}
+
+interface LoginState {
+  user: AuthUser;
+  error: string;
+  loading: boolean;
+  isUserLogout: boolean;
+  errorMsg: boolean;
+}
+
+export const initialState: LoginState = {
   user: {},
   error: "",
   loading: false,

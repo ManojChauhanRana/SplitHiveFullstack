@@ -351,9 +351,9 @@ const Dashboard = () => {
                         <div className="fw-semibold">{group.name}</div>
                         <div className="text-muted small">{(group.expenses || []).length} expenses</div>
                       </div>
-                      <Button as={Link} to={`/groups/${group.id}`} variant="outline-primary" size="sm">
+                      <Link to={`/groups/${group.id}`} className="btn btn-outline-primary btn-sm">
                         View
-                      </Button>
+                      </Link>
                     </ListGroup.Item>
                   ))}
                 </ListGroup>
