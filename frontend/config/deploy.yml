@@ -14,8 +14,8 @@ servers:
 # kamal-proxy on the VPS will intercept port 80/443 traffic and route it here
 # if the hostname matches yourdomain.com or www.yourdomain.com.
 proxy:
-  ssl: true
-  host: yourdomain.com, www.yourdomain.com
+  ssl: false
+  host: 69.62.81.57
   # Nginx container internally listens on port 80, which matches kamal-proxy's default.
 
 # Credentials for your image host.
@@ -31,4 +31,4 @@ builder:
   arch: amd64
   # Pass build arguments to the Docker build process
   args:
-    VITE_API_URL: https://api.yourdomain.com # <-- REPLACE with your actual api domain
+    VITE_API_URL: http://69.62.81.57:3000
